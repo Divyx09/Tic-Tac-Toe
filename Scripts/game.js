@@ -52,12 +52,12 @@ function selectGameFeild(event) {
   event.target.classList.add("disabled");
   gameData[selectedRow][selectedColumn] = activePlayer + 1;
 
+  currentRound++;
   const winnerId = checkForGameOver();
   if (winnerId !== 0) {
     endGame(winnerId);
   }
 
-  currentRound++;
   switchPlayer();
 }
 
